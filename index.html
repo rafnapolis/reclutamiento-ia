@@ -13,17 +13,23 @@
       color: #1e293b;
       background-color: #0f172a;
       line-height: 1.6;
-    }
-    .hero {
       min-height: 100vh;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
       align-items: center;
-      padding: 40px 20px;
-      text-align: center;
+      justify-content: center;
+      padding: 20px;
       background: radial-gradient(circle at center, #1e1b4b 0%, #0f172a 100%);
-      color: white;
+    }
+    .landing-card {
+      background: rgba(30, 41, 59, 0.7);
+      border: 1px solid rgba(51, 65, 85, 0.8);
+      border-radius: 16px;
+      padding: 40px 30px;
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.4);
+      backdrop-filter: blur(10px);
     }
     .badge {
       display: inline-block;
@@ -31,7 +37,7 @@
       color: #c084fc;
       padding: 6px 16px;
       border-radius: 20px;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 1.5px;
@@ -40,131 +46,109 @@
     }
     h1 {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 42px;
-      max-width: 800px;
-      line-height: 1.15;
-      margin-bottom: 20px;
+      font-size: 34px;
       color: #ffffff;
+      line-height: 1.2;
+      margin-bottom: 15px;
     }
     h1 span { color: #a78bfa; }
     p.subtitle {
-      font-size: 18px;
+      font-size: 15.5px;
       color: #94a3b8;
-      max-width: 650px;
-      margin-bottom: 35px;
+      margin-bottom: 30px;
     }
-    .cta-container {
+    .action-container {
       display: flex;
       flex-direction: column;
-      gap: 15px;
-      width: 100%;
-      max-width: 400px;
+      gap: 14px;
+      margin-bottom: 30px;
     }
-    .btn-main {
+    .btn-download {
       background: #4f46e5;
       color: white;
-      padding: 16px 28px;
-      border-radius: 8px;
+      padding: 16px 24px;
+      border-radius: 10px;
       font-weight: 700;
       font-size: 16px;
       text-decoration: none;
-      box-shadow: 0 10px 25px rgba(79, 70, 229, 0.4);
+      box-shadow: 0 8px 20px rgba(79, 70, 229, 0.35);
       transition: all 0.2s ease;
-      display: inline-flex;
+      display: flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
     }
-    .btn-main:hover {
+    .btn-download:hover {
       background: #4338ca;
       transform: translateY(-2px);
     }
-    .btn-secondary {
+    .btn-payhip {
       background: rgba(255, 255, 255, 0.05);
-      color: #e2e8f0;
-      padding: 14px 28px;
-      border-radius: 8px;
+      color: #cbd5e1;
+      padding: 12px 24px;
+      border-radius: 10px;
       font-weight: 600;
       font-size: 14px;
       text-decoration: none;
       border: 1px solid rgba(255, 255, 255, 0.1);
       transition: all 0.2s ease;
-      display: inline-flex;
+      display: flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
     }
-    .btn-secondary:hover {
+    .btn-payhip:hover {
       background: rgba(255, 255, 255, 0.1);
       color: white;
     }
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      max-width: 900px;
-      margin-top: 50px;
-      text-align: left;
-    }
-    .feature-card {
-      background: rgba(30, 41, 59, 0.5);
-      border: 1px solid rgba(51, 65, 85, 0.6);
-      padding: 20px;
-      border-radius: 10px;
-    }
-    .feature-card h3 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 16px;
-      color: #f8fafc;
-      margin-bottom: 8px;
-    }
-    .feature-card p {
-      font-size: 13.5px;
+    .features-mini {
+      display: flex;
+      justify-content: space-around;
+      border-top: 1px solid rgba(51, 65, 85, 0.6);
+      padding-top: 20px;
+      font-size: 13px;
       color: #94a3b8;
+      gap: 10px;
     }
-    @media (max-width: 768px) {
-      h1 { font-size: 32px; }
-      p.subtitle { font-size: 16px; }
+    .features-mini div {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    @media (max-width: 480px) {
+      h1 { font-size: 26px; }
+      .landing-card { padding: 25px 20px; }
+      .features-mini { flex-direction: column; gap: 8px; text-align: left; }
     }
   </style>
 </head>
 <body>
 
-  <div class="hero">
-    <span class="badge">RECURSO LIBRE PARA PROFESIONALES DE RRHH</span>
+  <div class="landing-card">
+    <span class="badge">MANUAL TÉCNICO B2B</span>
     
-    <h1>Reduce un 70% el tiempo de selección con <span>Agentes de IA</span></h1>
+    <h1>Reclutamiento Inteligente con <span>Agentes de IA</span></h1>
     
     <p class="subtitle">
-      Descarga sin registros ni esperas el manual operativo definitivo. Aprende a automatizar el filtrado de currículums y optimizar tus vacantes en minutos.
+      Descarga el manual operativo y reduce un 70% el tiempo de filtrado de currículums en tu departamento.
     </p>
 
-    <div class="cta-container">
-      <!-- Botón de descarga directa del Ebook PDF -->
-      <a href="ebook_rrhh_ia_final.pdf" class="btn-main" download>
+    <div class="action-container">
+      <!-- Botón único y directo de descarga del PDF (sin formularios) -->
+      <a href="ebook_rrhh_ia_final.pdf" class="btn-download" download>
         <i class="fa-solid fa-file-arrow-down"></i> Descargar Ebook Gratis (PDF)
       </a>
 
-      <!-- Botón directo hacia tu producto en Payhip para adquirir las plantillas .json -->
-      <a href="https://payhip.com/b/Ootfq" target="_blank" class="btn-secondary">
-        <i class="fa-solid fa-bolt"></i> Ver Kit de Plantillas Make (.JSON)
+      <!-- Acceso directo opcional hacia el kit completo en Payhip -->
+      <a href="https://payhip.com/b/Ootfq" target="_blank" class="btn-payhip">
+        <i class="fa-solid fa-bolt text-amber-400"></i> Ver Kit de Plantillas Make (.JSON)
       </a>
     </div>
 
-    <!-- Beneficios clave resumidos -->
-    <div class="features">
-      <div class="feature-card">
-        <h3><i class="fa-solid fa-clock text-indigo-400"></i> Cero Fricción</h3>
-        <p>Acceso inmediato al contenido técnico y estratégico sin formularios molestos.</p>
-      </div>
-      <div class="feature-card">
-        <h3><i class="fa-solid fa-brain text-purple-400"></i> Prompts Listos</h3>
-        <p>Estructuras exactas de GPT-4 para calificar y puntuar candidatos objetivamente.</p>
-      </div>
-      <div class="feature-card">
-        <h3><i class="fa-solid fa-code-merge text-green-400"></i> Automatización Real</h3>
-        <p>Conexión directa mediante Make y WhatsApp para escalar tus procesos.</p>
-      </div>
+    <div class="features-mini">
+      <div><i class="fa-solid fa-check text-green-400"></i> Sin registros</div>
+      <div><i class="fa-solid fa-check text-indigo-400"></i> Acceso inmediato</div>
+      <div><i class="fa-solid fa-check text-purple-400"></i> 100% Práctico</div>
     </div>
   </div>
 
