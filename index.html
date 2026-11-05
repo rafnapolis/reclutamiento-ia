@@ -1,314 +1,172 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reclutamiento Inteligente con IA | Manual y Plantillas para RRHH</title>
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Google Fonts: Inter / Plus Jakarta Sans & Space Grotesk -->
+  <title>Reclutamiento Inteligente con IA | Manual Gratuito para RRHH</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap">
-  <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-            display: ['"Space Grotesk"', 'sans-serif'],
-          },
-          colors: {
-            slateCustom: {
-              850: '#172033',
-              900: '#0f172a',
-            }
-          }
-        }
-      }
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #1e293b;
+      background-color: #0f172a;
+      line-height: 1.6;
     }
-  </script>
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+      text-align: center;
+      background: radial-gradient(circle at center, #1e1b4b 0%, #0f172a 100%);
+      color: white;
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(168, 85, 247, 0.15);
+      color: #c084fc;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      border: 1px solid rgba(192, 132, 252, 0.3);
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 42px;
+      max-width: 800px;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+    h1 span { color: #a78bfa; }
+    p.subtitle {
+      font-size: 18px;
+      color: #94a3b8;
+      max-width: 650px;
+      margin-bottom: 35px;
+    }
+    .cta-container {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      width: 100%;
+      max-width: 400px;
+    }
+    .btn-main {
+      background: #4f46e5;
+      color: white;
+      padding: 16px 28px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 16px;
+      text-decoration: none;
+      box-shadow: 0 10px 25px rgba(79, 70, 229, 0.4);
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .btn-main:hover {
+      background: #4338ca;
+      transform: translateY(-2px);
+    }
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      color: #e2e8f0;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 900px;
+      margin-top: 50px;
+      text-align: left;
+    }
+    .feature-card {
+      background: rgba(30, 41, 59, 0.5);
+      border: 1px solid rgba(51, 65, 85, 0.6);
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .feature-card h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 16px;
+      color: #f8fafc;
+      margin-bottom: 8px;
+    }
+    .feature-card p {
+      font-size: 13.5px;
+      color: #94a3b8;
+    }
+    @media (max-width: 768px) {
+      h1 { font-size: 32px; }
+      p.subtitle { font-size: 16px; }
+    }
+  </style>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-indigo-500 selection:text-white">
+<body>
 
-  <!-- HEADER / NAVBAR -->
-  <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center text-white font-display text-xl shadow-md shadow-indigo-500/20">
-          <i class="fa-solid fa-brain"></i>
-        </div>
-        <span class="font-display font-bold text-xl text-slate-900">TalentoIA<span class="text-indigo-600">.</span></span>
+  <div class="hero">
+    <span class="badge">RECURSO LIBRE PARA PROFESIONALES DE RRHH</span>
+    
+    <h1>Reduce un 70% el tiempo de selección con <span>Agentes de IA</span></h1>
+    
+    <p class="subtitle">
+      Descarga sin registros ni esperas el manual operativo definitivo. Aprende a automatizar el filtrado de currículums y optimizar tus vacantes en minutos.
+    </p>
+
+    <div class="cta-container">
+      <!-- Botón de descarga directa del Ebook PDF -->
+      <a href="ebook_rrhh_ia_final.pdf" class="btn-main" download>
+        <i class="fa-solid fa-file-arrow-down"></i> Descargar Ebook Gratis (PDF)
+      </a>
+
+      <!-- Botón directo hacia tu producto en Payhip para adquirir las plantillas .json -->
+      <a href="https://payhip.com/b/Ootfq" target="_blank" class="btn-secondary">
+        <i class="fa-solid fa-bolt"></i> Ver Kit de Plantillas Make (.JSON)
+      </a>
+    </div>
+
+    <!-- Beneficios clave resumidos -->
+    <div class="features">
+      <div class="feature-card">
+        <h3><i class="fa-solid fa-clock text-indigo-400"></i> Cero Fricción</h3>
+        <p>Acceso inmediato al contenido técnico y estratégico sin formularios molestos.</p>
       </div>
-      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600">
-        <a href="#beneficios" class="hover:text-indigo-600 transition-colors">Beneficios</a>
-        <a href="#contenido" class="hover:text-indigo-600 transition-colors">Contenido</a>
-        <a href="#kit" class="hover:text-indigo-600 transition-colors">Kit Make (.JSON)</a>
-      </nav>
-      <div>
-        <a href="https://payhip.com/b/Ootfq" target="_blank" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-5 py-2.5 rounded-xl shadow-lg shadow-indigo-600/20 transition-all duration-200 text-sm">
-          Obtener Kit Completo
-        </a>
+      <div class="feature-card">
+        <h3><i class="fa-solid fa-brain text-purple-400"></i> Prompts Listos</h3>
+        <p>Estructuras exactas de GPT-4 para calificar y puntuar candidatos objetivamente.</p>
+      </div>
+      <div class="feature-card">
+        <h3><i class="fa-solid fa-code-merge text-green-400"></i> Automatización Real</h3>
+        <p>Conexión directa mediante Make y WhatsApp para escalar tus procesos.</p>
       </div>
     </div>
-  </header>
-
-  <!-- HERO SECTION -->
-  <section class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-gradient-to-b from-slate-900 via-indigo-950 to-slate-900 text-white">
-    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#818cf8_1px,transparent_1px)] [background-size:16px_16px]"></div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        
-        <!-- Texto Hero -->
-        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-          <span class="inline-flex items-center gap-2 bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
-            <i class="fa-solid fa-bolt text-amber-400"></i> Automatización B2B para RRHH
-          </span>
-          <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
-            Reduce un <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">70% el tiempo</span> de contratación con IA
-          </h1>
-          <p class="text-slate-300 text-lg sm:text-xl font-normal max-w-2xl mx-auto lg:mx-0">
-            Elimina el filtrado manual de 500+ currículums por vacante. Descarga el manual definitivo y obtén los flujos automatizados listos para integrar en Make y GPT-4.
-          </p>
-
-          <!-- Formulario / CTA Box -->
-          <div class="bg-white/5 border border-white/10 p-4 sm:p-6 rounded-2xl backdrop-blur-md max-w-xl mx-auto lg:mx-0 shadow-2xl">
-            <form onsubmit="event.preventDefault(); alert('¡Gracias por registrarte! Revisa tu correo para descargar el Ebook gratuito.');" class="flex flex-col sm:flex-row gap-3">
-              <input type="email" placeholder="Tu correo corporativo..." required class="flex-1 bg-slate-900/80 border border-slate-700 text-white placeholder-slate-400 px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm">
-              <button type="submit" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-6 py-3 rounded-xl transition-all shadow-lg shadow-emerald-600/30 text-sm whitespace-nowrap">
-                Descargar Ebook Gratis
-              </button>
-            </form>
-            <p class="text-slate-400 text-xs mt-3 text-center sm:text-left">
-              🔒 Cero spam. Incluye acceso inmediato al manual en PDF y vista previa de recursos.
-            </p>
-          </div>
-        </div>
-
-        <!-- Imagen / Mockup Visual -->
-        <div class="lg:col-span-5 flex justify-center">
-          <div class="relative w-full max-w-md bg-gradient-to-br from-indigo-600/30 to-purple-600/30 p-1 rounded-3xl shadow-2xl border border-indigo-500/20">
-            <div class="bg-slate-900 rounded-[22px] p-6 text-left space-y-4 shadow-inner">
-              <div class="flex items-center justify-between border-b border-slate-800 pb-4">
-                <div class="flex items-center gap-2">
-                  <div class="w-3 h-3 rounded-full bg-rose-500"></div>
-                  <div class="w-3 h-3 rounded-full bg-amber-500"></div>
-                  <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
-                </div>
-                <span class="text-xs text-slate-400 font-mono">Workflow_Make.json</span>
-              </div>
-              <div class="space-y-3 font-mono text-xs">
-                <div class="bg-slate-800/80 p-3 rounded-lg border border-slate-700/50 flex items-center justify-between">
-                  <span class="text-indigo-300"><i class="fa-solid fa-file-pdf mr-2"></i> 1. Recibir CV PDF</span>
-                  <span class="text-emerald-400">OK</span>
-                </div>
-                <div class="text-center text-slate-500"><i class="fa-solid fa-arrow-down"></i></div>
-                <div class="bg-slate-800/80 p-3 rounded-lg border border-slate-700/50 flex items-center justify-between">
-                  <span class="text-purple-300"><i class="fa-solid fa-brain mr-2"></i> 2. Análisis GPT-4 (Score)</span>
-                  <span class="text-emerald-400">95/100</span>
-                </div>
-                <div class="text-center text-slate-500"><i class="fa-solid fa-arrow-down"></i></div>
-                <div class="bg-slate-800/80 p-3 rounded-lg border border-slate-700/50 flex items-center justify-between">
-                  <span class="text-emerald-300"><i class="fa-brands fa-whatsapp mr-2"></i> 3. Agendar WhatsApp</span>
-                  <span class="text-amber-400">Automático</span>
-                </div>
-              </div>
-              <div class="pt-2 text-center">
-                <span class="text-[11px] text-slate-400 italic">Sistema listo para importar en Make en 1 clic.</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- SECCIÓN DE BENEFICIOS -->
-  <section id="beneficios" class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-        <span class="text-indigo-600 font-bold text-xs uppercase tracking-widest bg-indigo-50 px-3.5 py-1 rounded-full border border-indigo-100">
-          Impacto Operativo
-        </span>
-        <h2 class="font-display text-3xl sm:text-4xl font-bold text-slate-900">
-          Por qué la automatización con IA es indispensable hoy
-        </h2>
-        <p class="text-slate-600 text-base sm:text-lg">
-          Transforma tu departamento de Recursos Humanos de un centro de costos administrativos a un área estratégica de atracción de talento.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Beneficio 1 -->
-        <div class="bg-slate-50 border border-slate-200/80 p-8 rounded-2xl hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-          <div class="w-14 h-14 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center text-2xl font-bold mb-6 shadow-sm">
-            <i class="fa-solid fa-clock-rotate-left"></i>
-          </div>
-          <h3 class="font-display font-bold text-xl text-slate-900 mb-3">De 30 horas a 2 minutos</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">
-            Elimina por completo la revisión manual de documentos PDF. El modelo de lenguaje analiza y clasifica los currículums de manera instantánea.
-          </p>
-        </div>
-
-        <!-- Beneficio 2 -->
-        <div class="bg-slate-50 border border-slate-200/80 p-8 rounded-2xl hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-          <div class="w-14 h-14 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-2xl font-bold mb-6 shadow-sm">
-            <i class="fa-solid fa-bullseye"></i>
-          </div>
-          <h3 class="font-display font-bold text-xl text-slate-900 mb-3">Cero Falsos Positivos</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">
-            Asigna un *Score* de compatibilidad del 1 al 100 basado estrictamente en los requisitos técnicos que tu vacante necesita, evitando sesgos humanos.
-          </p>
-        </div>
-
-        <!-- Beneficio 3 -->
-        <div class="bg-slate-50 border border-slate-200/80 p-8 rounded-2xl hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-          <div class="w-14 h-14 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center text-2xl font-bold mb-6 shadow-sm">
-            <i class="fa-brands fa-whatsapp"></i>
-          </div>
-          <h3 class="font-display font-bold text-xl text-slate-900 mb-3">Comunicación Inmediata</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">
-            Conecta automáticamente a los candidatos ideales vía WhatsApp o correo electrónico para coordinar entrevistas antes de que la competencia los contacte.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- VISTA PREVIA DEL CONTENIDO (CAPÍTULOS) -->
-  <section id="contenido" class="py-20 bg-slate-100/70 border-y border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-        <span class="text-purple-600 font-bold text-xs uppercase tracking-widest bg-purple-50 px-3.5 py-1 rounded-full border border-purple-100">
-          Estructura del Libro
-        </span>
-        <h2 class="font-display text-3xl sm:text-4xl font-bold text-slate-900">
-          ¿Qué aprenderás en el Manual Técnico?
-        </h2>
-        <p class="text-slate-600 text-base sm:text-lg">
-          5 capítulos diseñados bajo la metodología B2B para implementar sistemas reales en días, no en meses.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-          <span class="text-xs font-bold text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-md">Capítulo 1</span>
-          <h4 class="font-display font-bold text-lg text-slate-900 mt-3 mb-2">Diagnóstico Financiero</h4>
-          <p class="text-slate-600 text-sm">Mide el coste real del filtrado manual y calcula el retorno de inversión de la automatización en tu empresa.</p>
-        </div>
-
-        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-          <span class="text-xs font-bold text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-md">Capítulo 2</span>
-          <h4 class="font-display font-bold text-lg text-slate-900 mt-3 mb-2">Arquitectura de Triaje</h4>
-          <p class="text-slate-600 text-sm">Diseña las 4 capas del sistema: captura, procesamiento inteligente, scoring y respuesta automatizada.</p>
-        </div>
-
-        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-          <span class="text-xs font-bold text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-md">Capítulo 3</span>
-          <h4 class="font-display font-bold text-lg text-slate-900 mt-3 mb-2">Prompts de GPT-4</h4>
-          <p class="text-slate-600 text-sm">Copia y adapta los prompts maestros para extraer JSON estructurados con las calificaciones de los candidatos.</p>
-        </div>
-
-        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-          <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-md">Capítulo 4</span>
-          <h4 class="font-display font-bold text-lg text-slate-900 mt-3 mb-2">Integración Make & APIs</h4>
-          <p class="text-slate-600 text-sm">Configura los webhooks, conectores de Google Sheets y las reglas de enrutamiento condicional.</p>
-        </div>
-
-        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-          <span class="text-xs font-bold text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-md">Capítulo 5</span>
-          <h4 class="font-display font-bold text-lg text-slate-900 mt-3 mb-2">Entrevistas en WhatsApp</h4>
-          <p class="text-slate-600 text-sm">Implementa el protocolo conversacional automático para validar idoneidad y agendar llamadas.</p>
-        </div>
-
-        <div class="bg-gradient-to-br from-indigo-900 to-slate-900 p-6 rounded-2xl text-white flex flex-col justify-between shadow-lg">
-          <div>
-            <span class="text-xs font-bold text-purple-300 bg-white/10 px-2.5 py-1 rounded-md">Bonus Kit</span>
-            <h4 class="font-display font-bold text-lg text-white mt-3 mb-2">Plantillas .JSON Listas</h4>
-            <p class="text-slate-300 text-sm">Escenarios de Make exportados para importar en 1 solo clic sin programar nada.</p>
-          </div>
-          <div class="mt-4">
-            <a href="#kit" class="text-xs font-bold text-indigo-300 hover:text-white flex items-center gap-1">Ver Kit de Plantillas <i class="fa-solid fa-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECCIÓN DESTACADA: KIT DE PLANTILLAS MAKE (PAYHIP) -->
-  <section id="kit" class="py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 rounded-3xl p-8 sm:p-12 lg:p-16 text-white shadow-2xl border border-indigo-500/30 relative overflow-hidden">
-        <div class="absolute -right-10 -bottom-10 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
-        
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
-          <div class="lg:col-span-7 space-y-6">
-            <span class="bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
-              <i class="fa-solid fa-box-open mr-1"></i> Oferta Kit de Implementación
-            </span>
-            <h2 class="font-display text-3xl sm:text-4xl font-bold tracking-tight">
-              Kit Completo: Manual en PDF + Plantillas .JSON para Make
-            </h2>
-            <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
-              No pierdas horas configurando escenarios desde cero. Obtén el paquete listo para importar que incluye:
-            </p>
-            <ul class="space-y-3 text-slate-300 text-sm sm:text-base">
-              <li class="flex items-center gap-3">
-                <i class="fa-solid fa-circle-check text-emerald-400"></i> Manual Operativo en PDF (7 páginas detalladas).
-              </li>
-              <li class="flex items-center gap-3">
-                <i class="fa-solid fa-circle-check text-emerald-400"></i> Plantilla Make 01: Filtrado, PDF Parser & GPT-4.
-              </li>
-              <li class="flex items-center gap-3">
-                <i class="fa-solid fa-circle-check text-emerald-400"></i> Plantilla Make 02: Enrutador WhatsApp & Agendamiento.
-              </li>
-              <li class="flex items-center gap-3">
-                <i class="fa-solid fa-circle-check text-emerald-400"></i> Plantilla Google Sheets lista para clonar con 1 clic.
-              </li>
-            </ul>
-          </div>
-
-          <div class="lg:col-span-5 bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/10 text-center space-y-6 shadow-xl">
-            <div>
-              <span class="text-xs uppercase tracking-widest text-slate-400 font-bold">Acceso Inmediato</span>
-              <div class="font-display text-4xl sm:text-5xl font-bold text-white mt-2">$27 <span class="text-lg text-indigo-300 font-normal">USD</span></div>
-              <p class="text-slate-300 text-xs mt-1">Pago único seguro a través de Payhip</p>
-            </div>
-
-            <a href="https://payhip.com/b/Ootfq" target="_blank" class="block w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-4 px-6 rounded-xl shadow-lg shadow-emerald-600/30 transition-all text-center text-base">
-              <i class="fa-solid fa-cart-shopping mr-2"></i> Obtener Kit en Payhip
-            </a>
-
-            <div class="flex items-center justify-center gap-6 text-xs text-slate-400 pt-2">
-              <span><i class="fa-solid fa-shield-halved text-emerald-400 mr-1"></i> Garantía de valor</span>
-              <span><i class="fa-solid fa-bolt text-amber-400 mr-1"></i> Descarga instantánea</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800 text-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
-      <div class="flex items-center gap-3">
-        <div class="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center text-white font-display text-sm">
-          <i class="fa-solid fa-brain"></i>
-        </div>
-        <span class="font-display font-bold text-white text-base">TalentoIA B2B</span>
-      </div>
-      <p class="text-xs text-center sm:text-left">
-        &copy; 2026 Consultoría de Crecimiento & IA B2B. Todos los derechos reservados.
-      </p>
-      <div class="flex gap-6 text-xs">
-        <a href="https://payhip.com/b/Ootfq" target="_blank" class="hover:text-white transition-colors">Comprar Kit</a>
-        <a href="#beneficios" class="hover:text-white transition-colors">Términos</a>
-      </div>
-    </div>
-  </footer>
+  </div>
 
 </body>
 </html>
